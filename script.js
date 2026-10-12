@@ -12,8 +12,7 @@ const JALUR_MODEL = 'models';
 
 // ✏️ AI baru menjawab jika yakin minimal 60%
 const AMBANG_YAKIN = 0.6;
-const BELUM_YAKIN = { emoji: "🤔", nama: "Belum yakin", teks: "Coba tunjukkan ekspresimu lebih jelas!" };
-
+const RAGU = { emoji: '🤔', pesan: 'AI masih ragu... coba tunjukkan ekspresimu lebih jelas!', warna: '#ECEFF1' };
 // Jeda antar tebakan (milidetik). Makin kecil makin cepat, tapi makin berat.
 const JEDA_MS = 150;
 
