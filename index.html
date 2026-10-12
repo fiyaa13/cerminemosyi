@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cermin Emosi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Cermin Emosi</h1>
+      <p class="sub">Ubah ekspresimu, lihat AI menebaknya.</p>
+    </header>
+
+    <div class="layout">
+    <section class="stage" id="stage">
+      <video id="video" autoplay muted playsinline></video>
+      <canvas id="overlay"></canvas>
+      <div class="placeholder" id="placeholder">Kamera belum menyala</div>
+    </section>
+
+    <section class="hasil" aria-live="polite">
+      <div class="emoji" id="emoji">🙂</div>
+      <p class="pesan" id="pesan">Tekan tombol Mulai Kamera</p>
+      <p class="angka" id="angka"></p>
+    </section>
+    </div>
+
+    <button id="btnMulai" type="button">Mulai Kamera</button>
+    <p class="status" id="status">Menunggu...</p>
+  </main>
+
+  <!-- ===== MISI 1: library AI face-api (diambil dari GitHub/npm lewat CDN) ===== -->
+  <!-- Kalau internet bermasalah, ganti src dengan: lib/face-api.js (salinan lokal) -->
+  <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.15/dist/face-api.js"></script>
+
+  <!-- Script milik kita HARUS dimuat SETELAH library -->
+  <script src="script.js"></script>
+</body>
+</html>

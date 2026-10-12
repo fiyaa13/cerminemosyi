@@ -1,0 +1,121 @@
+:root {
+  --bg: #f8f4ec;
+  --card: #a9ddd5;
+  --primary: #5a2929;
+  --text: #332020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.sub {
+  color: #765;
+  margin-bottom: 30px;
+}
+
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 25px;
+}
+
+.stage {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: #123;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 10px solid var(--card);
+}
+
+
+.stage video,
+.stage canvas {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scaleX(-1);
+}
+
+
+.placeholder {
+  height:100%;
+  display:grid;
+  place-items:center;
+  color:white;
+}
+
+
+.hasil {
+  background:white;
+  border-radius:30px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+
+.emoji {
+  font-size:5rem;
+  margin-bottom:15px;
+}
+
+
+.pesan {
+  font-size:1.4rem;
+  font-weight:bold;
+  color:var(--primary);
+}
+
+
+button {
+  margin-top:25px;
+  padding:15px 40px;
+  border:0;
+  border-radius:50px;
+  background:var(--primary);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+.status {
+  margin-top:15px;
+  padding:10px;
+  border-radius:20px;
+  background:white;
+}
+
+
+@media(max-width:800px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+}

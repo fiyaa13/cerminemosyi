@@ -1,0 +1,33 @@
+CERMIN EMOSI — VERSI GURU (sudah lengkap dan berjalan)
+=====================================================
+
+Isi folder
+  index.html   tampilan halaman + pemanggilan library AI (CDN)
+  style.css    desain halaman
+  script.js    logika: kamera -> AI memberi angka -> kode memilih reaksi
+  models/      model AI (deteksi wajah + ekspresi), dari repo vladmandic/face-api
+  lib/         salinan lokal library face-api (cadangan jika internet mati)
+
+Cara menjalankan
+  1. Letakkan folder ini di Laragon (C:\laragon\www\) atau buka dengan VS Code + Live Server.
+  2. Buka http://localhost/cermin-emosi-guru/ (sesuaikan nama folder).
+  3. Tekan "Mulai Kamera", izinkan kamera.
+  JANGAN klik dua kali index.html (alamat file:///). Model AI tidak bisa dimuat dari sana.
+
+Jika internet lab bermasalah
+  Di index.html, ganti
+     https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.15/dist/face-api.js
+  dengan
+     lib/face-api.js
+
+Kunci jawaban misi (versi peserta didik)
+  MISI 1  Tambahkan di index.html, sebelum script.js:
+          <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.15/dist/face-api.js"></script>
+  MISI 2  Di script.js ubah  const JALUR_MODEL = 'model';  menjadi  'models'
+  MISI 3  Lengkapi objek EKSPRESI (contoh ada di script.js versi guru)
+
+Catatan
+  - Ekspresi "fearful" dan "disgusted" sulit dipicu dan sering salah baca (jadikan bonus).
+  - AI hanya menebak EKSPRESI di wajah, bukan perasaan yang sebenarnya.
+  - Video diproses di browser dan tidak dikirim ke server mana pun.
+  - Library: face-api oleh Vladimir Mandic (lisensi MIT), lihat lib/LICENSE-face-api.txt.
