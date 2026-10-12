@@ -10,8 +10,9 @@
 // MISI 2: nama folder tempat file model AI berada.
 const JALUR_MODEL = 'models';
 
-// Minimal keyakinan AI (0 sampai 1) supaya tebakannya dipakai.
-const AMBANG_YAKIN = 0.5;
+// ✏️ AI baru menjawab jika yakin minimal 60%
+const AMBANG_YAKIN = 0.6;
+const BELUM_YAKIN = { emoji: "🤔", nama: "Belum yakin", teks: "Coba tunjukkan ekspresimu lebih jelas!" };
 
 // Jeda antar tebakan (milidetik). Makin kecil makin cepat, tapi makin berat.
 const JEDA_MS = 150;
@@ -155,11 +156,11 @@ async function tebakSekali() {
   const teratas = urut[0];
   tampilAngka(urut);
 
-  if (teratas.probability < AMBANG_YAKIN) {
-    tampilReaksi('ragu');
-  } else {
-    tampilReaksi(teratas.expression);
-  }
+   if (teratas.probability < AMBANG_YAKIN) {
+     tampilReaksi('ragu');
+   } else {
+     tampilReaksi(teratas.expression);
+   }
 }
 
 async function ulangi() {
